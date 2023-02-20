@@ -1,6 +1,4 @@
 <?php
-
-
 class Calculator{
     public $history=[];
     public function add($value1, $value2){
