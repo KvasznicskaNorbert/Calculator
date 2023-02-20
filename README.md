@@ -1,6 +1,6 @@
-## Calculator
+# Calculator
 
-# Basic calculator with the main math operation. 
+## Basic calculator with the main math operation. 
 
     - Add
     - Subtraction
