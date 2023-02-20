@@ -2,7 +2,7 @@
 session_start();
 
     spl_autoload_register(function ($type){
-        include "classes/" . $type .".php";
+        include "classes/" . $type ."_class.php";
     });
     $obj = new Calculator();
 
@@ -27,7 +27,6 @@ session_start();
             $function = $_POST["operation"];
             $result = $obj->$function ($_POST["value1"], $_POST["value2"]);
             $_SESSION["result"] = $result;
-            //$obj->UpdateHistory("<p>$_POST[value1] $symbol $_POST[value2] = $result</p>");
             $historyItem = "<p>$_POST[value1] $symbol $_POST[value2] = $result</p>";
             $_SESSION["history"][] = $historyItem;
         }
