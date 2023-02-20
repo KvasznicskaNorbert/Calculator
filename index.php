@@ -1,5 +1,6 @@
 <?php
 session_start();
+
     spl_autoload_register(function ($type){
         include "classes/" . $type .".php";
     });
@@ -36,12 +37,12 @@ session_start();
         if(isset($_SESSION["history"])){
 
             foreach ($_SESSION["history"] as $i => $value) {
-                unset($_SESSION["history"][$i]);
-                
+                unset($_SESSION["history"][$i]);   
             }
 
             session_destroy(); 
         }
+
         if(isset($_SESSION["result"])){
             unset($_SESSION["result"]);
         }
@@ -74,16 +75,11 @@ session_start();
     </form>
 
     <?php
-
-    if(isset($result)){
-        foreach($_SESSION["history"] as $history){
-            print($history);
-        }
-        
-    }
-
-   
-    
+        if(isset($result)){
+            foreach($_SESSION["history"] as $history){
+                print($history);
+            } 
+        } 
     ?>
     
 </body>
